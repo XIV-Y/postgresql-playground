@@ -20,6 +20,12 @@ ALTER TABLE test_table
 -- SET balance = 1200.00
 -- WHERE id = 1;
 
+EXPLAIN ANALYZE SELECT id, name, balance
+  FROM test_table
+  WHERE balance > 100.00;
+
+select * from accounts;
+
 WITH high_balance_customers AS (
   SELECT id, name, balance
   FROM test_table
